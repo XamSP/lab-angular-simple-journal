@@ -1,0 +1,10 @@
+<!-- <h1> Journal #{{ journals._id }} </h1> -->
+<a [routerLink]="['']"> Back to list </a>
+
+<div *ngIf="journals">
+    <div class="">
+        <h2> {{ journals.title }}&nbsp;</h2>
+        <h5> {{ journals.date | date: "mm/dd/yyyy" }} </h5>
+        <p> {{ journals.content }} </p>
+    </div>
+</div>

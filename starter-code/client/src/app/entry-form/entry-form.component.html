@@ -1,0 +1,18 @@
+<h5>New Journal</h5>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <label>Title:</label>
+  <input type="text" name="title" [(ngModel)]="title" #myJournal="ngModel" required>
+  <div *ngIf="myJournal.errors && (myJournal.dirty || myJournal.touched)">
+    <p class="error" [hidden]="!myJournal.errors.required">
+      Name is required
+    </p>
+  </div>
+  <label>Texts</label>
+  <input type="text" name="content" [(ngModel)]="content">
+  <div *ngIf="myJournal.errors && (myJournal.dirty || myJournal.touched)">
+    <p class="error" [hidden]="!myJournal.errors.required">
+      Text for this Journal is required
+    </p>
+  </div>  
+  <button type="submit">Send</button>
+</form>

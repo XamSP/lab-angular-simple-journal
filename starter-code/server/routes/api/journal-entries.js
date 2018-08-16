@@ -22,8 +22,11 @@ router.get('/journal-entries/:id', (req, res, next) => {
 router.post('/journal-entries', (req, res, next) => {
   const newEntry = new Entry({
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    date: new Date
   });
+  
+  console.log(newEntry.title);
 
   newEntry.save( (err) => {
     if (err)             { return res.status(500).json(err) }
